@@ -13,30 +13,30 @@ class Stack:
 
     # Define data members and __init__()
     def __init__(self):
-        self.head = None
-        self.count = 0
+        self.__head = None
+        self.__count = 0
 
     '''----------------- Public Functions of Stack -----------------'''
 
     def getSize(self):
         # Implement the getSize() function
 
-        return self.count
+        return self.__count
 
     def isEmpty(self):
         # Implement the isEmpty() function
 
-        return self.head is None
+        return self.__head is None
 
     def push(self, data):
         # Implement the push(element) function
 
         newNode = Node(data)
 
-        newNode.next = self.head
-        self.head = newNode
+        newNode.next = self.__head
+        self.__head = newNode
 
-        self.count += 1
+        self.__count += 1
 
     def pop(self):
         # Implement the pop() function
@@ -44,20 +44,19 @@ class Stack:
         if self.isEmpty():
             return -1
 
-        data = self.head.data
-        self.head = self.head.next
-        self.count -= 1
+        data = self.__head.data
+        self.__head = self.__head.next
+        self.__count -= 1
 
         return data
 
     def top(self):
         # Implement the top() function
 
-
         if self.isEmpty():
             return -1
 
-        return self.head.data
+        return self.__head.data
 
 
 # main
